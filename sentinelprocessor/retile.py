@@ -54,7 +54,7 @@ def retile_products(datapath, products, overlap=32):
     os.makedirs(f"{datapath}/retiled", exist_ok=True)
     os.system(
         'gdal_retile -ps %s %s -overlap %s -targetDir %s %s' % (
-            tilesize, tilesize, overlap, f"{datapath}/retiled", "mosaic.vrt"))
+            tilesize, tilesize, overlap, f"{datapath}/retiled", f"{datapath}/mosaic.vrt"))
 
     directory = os.fsencode(f"{datapath}/retiled")
     dirlist = os.listdir(directory)
